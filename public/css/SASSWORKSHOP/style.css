@@ -1,5 +1,14 @@
 body {
-  background: pink;
+  width: calc(100% - 40px);
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fffff0;
+  color: #242124;
+  background-image: url("/images/food.jpg");
+  background-repeat: no-repeat;
+  background-size: 70em 70em;
+  background-position: 80% 0%;
 }
 
 /*# sourceMappingURL=style.css.map */
