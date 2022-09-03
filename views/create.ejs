@@ -10,7 +10,7 @@
 
   <body>
     <h1>Create a new recipe</h1>
-    <form action="/create/createRecipe" method="POST">
+    <form action="/create/createRecipe" method="POST" enctype="multipart/form-data">
       <span>Recipe Name:<input type="text" name="name" placeholder="Recipe Name"></input></span>
       <span>Recipe Catagory:<select name="catagory">
           <option>Breakfast</option>
