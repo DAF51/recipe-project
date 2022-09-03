@@ -8,3 +8,10 @@ h1{
 .not{
     text-decoration: underline;
 }
+
+.card-img {
+    width: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+}
