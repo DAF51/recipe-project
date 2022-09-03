@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1>Edit your recipe</h1>
+  <form action="/edit" method="POST">
+
+    <!-- A form can't use a PUT request, so I'm going to need to send this to the main.JS
+    file where I'll create a button object that will send the put request through in
+    its place. -->
+
+    <span>Recipe Name: <input type="text" name="name" value=<%=`${recipeName}`%>></input></span>
+    <span>Recipe Catagory: <select name="catagory">
+      <option>Breakfast</option>
+      <option>Lunch</option>
+      <option>Dinner</option>
+      <option>Desert</option>
+    </select></span>
+    <span>Recipe: <textarea name="recipe"><%=recipe%></textarea></span>
+    <span class="ed">Finish Editing</span>
+
+  </form>
+  
+  <!-- This script was not working because it needed the ../ to back it out of the folder it was in. 
+  Without it, it was looking for the file in /edit/js/edit.js, instead of in /public/js. -->
+  <script src="../js/edit.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+  <body>
+    <h1>Create a new recipe</h1>
+    <form action="/create/createRecipe" method="POST">
+      <span>Recipe Name:<input type="text" name="name" placeholder="Recipe Name"></input></span>
+      <span>Recipe Catagory:<select name="catagory">
+          <option>Breakfast</option>
+          <option>Lunch</option>
+          <option>Dinner</option>
+          <option>Desert</option>
+        </select>
+      </span>
+      <span>Recipe: <textarea name="recipe" placeholder="Enter your recpie"></textarea></span>
+      <button>Submit new recipe</button>
+    </form>
+    
+  </body>
+
+</html>
