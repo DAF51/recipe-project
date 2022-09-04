@@ -34,7 +34,7 @@
   </ul>
   <form action=<%=`/edit/editImage/${todos._id}`%> method="POST" enctype="multipart/form-data">
     <label for="image">Edit image</label>
-    <input type="file" name="image" id="inputImage">
+    <input type="file" required name="image" id="inputImage">
       &nbsp;&nbsp;&nbsp;
     <button id="editedFile">Submit File</button>
   </form>
