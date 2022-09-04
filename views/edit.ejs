@@ -15,7 +15,7 @@
     <!-- A form can't use a PUT request, so I'm going to need to send this to the main.JS
     file where I'll create a button object that will send the put request through in
     its place. -->
-
+    <input type="hidden" name="id" value=<%=`${recipeID}`%>></input>
     <span>Recipe Name: <input type="text" name="name" value=<%=`${recipeName}`%>></input></span>
     <span>Recipe Catagory: <select name="catagory">
       <option>Breakfast</option>

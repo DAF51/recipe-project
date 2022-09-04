@@ -6,7 +6,7 @@ exports.getEdit = async (req, res) => {
   const recipeObj = await Todo.findById({_id: req.params.id})
   await console.log(`The ID is ${req.params.id}`)
   await console.log(`The name is ${recipeObj}`)
-  res.render("edit.ejs", {recipeName: recipeObj.recipeName, recipeCatagory: recipeObj.catagory, recipe:recipeObj.recipe})
+  res.render("edit.ejs", {recipeID:recipeObj._id, recipeName: recipeObj.recipeName, recipeCatagory: recipeObj.catagory, recipe:recipeObj.recipe})
   } catch(err){
     console.log(err)
   }
@@ -14,7 +14,7 @@ exports.getEdit = async (req, res) => {
 
 exports.editRecipe = async (req,res) => {
   try{ 
-    await Todo.updateOne({recipeName: req.body.nameFromJS, catagory: req.body.catFromJS, recipe: req.body.recipeFromJS})
+    await Todo.findByIdAndUpdate(req.body.idFromJS,{recipeName: req.body.nameFromJS, catagory: req.body.catFromJS, recipe: req.body.recipeFromJS})
     res.json("edit successful")
   } catch(err){
     console.log(err)
