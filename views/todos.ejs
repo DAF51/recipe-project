@@ -17,6 +17,9 @@
                 <p class="recipe"><%=el.recipe%></p>
                 <form action=<%=`/edit/${el._id}`%> method="GET"><button>Edit</button></form>
                 <span class='del'> Delete </span>
+                <div class="col-12 card-img">
+                    <img src="/uploads/images/<%= el.img %>" class="card-img" alt="...">
+                </div>
             </li>
     <% }) %>    
     </ul>

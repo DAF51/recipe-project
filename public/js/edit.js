@@ -5,19 +5,21 @@ Array.from(editBtn).forEach(el =>{
   el.addEventListener("click",editRecipe)
 })
 
+const id = editBtn[0].getAttribute('value')
 
 async function editRecipe(){
   const recipeName = await this.parentNode.name.value
   const recipeCatagory = await this.parentNode.catagory.value
   const recipe = await this.parentNode.recipe.value
   try {
-    response = await fetch("/edit/editRecipe", {
+    response = await fetch("/edit/editRecipe/id", {
       method: "PUT",
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
           'nameFromJS': recipeName,
           "catFromJS": recipeCatagory,
-          "recipeFromJS": recipe
+          "recipeFromJS": recipe,
+          "idFromJS": id
       })
     }) 
 
@@ -30,5 +32,3 @@ async function editRecipe(){
     console.log(err)
   }
 }
-
-

@@ -16,6 +16,10 @@ const RecipeSchema = new mongoose.Schema({
   userId: {
     type: String,
     required: true
+  },
+  img: {
+    type: String,
+    default: 'placeholder.jpg',
   }
 })
 
