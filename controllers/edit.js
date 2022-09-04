@@ -2,23 +2,33 @@ const Todo = require('../models/Todo')
 
 exports.getEdit = async (req, res) => {
   try{
-  //Getting this to work was a royal PITA. Turns out the get request over in the EJS didn't need the : before the ID objeect
   const recipeObj = await Todo.findById({_id: req.params.id})
   await console.log(`The ID is ${req.params.id}`)
   await console.log(`The name is ${recipeObj}`)
-  res.render("edit.ejs", {recipeName: recipeObj.recipeName, recipeCatagory: recipeObj.catagory, recipe:recipeObj.recipe})
+  const todoItems = await Todo.findById({_id: req.params.id})
+  res.render("edit.ejs", {recipeName: recipeObj.recipeName, recipeCatagory: recipeObj.catagory, recipe:recipeObj.recipe, todos: todoItems})
   } catch(err){
     console.log(err)
   }
 }
 
+
 exports.editRecipe = async (req,res) => {
   try{ 
-    await Todo.updateOne({recipeName: req.body.nameFromJS, catagory: req.body.catFromJS, recipe: req.body.recipeFromJS})
+    await Todo.updateOne({_id: req.body.idFromJS},{$set: {recipeName: req.body.nameFromJS, catagory: req.body.catFromJS, recipe: req.body.recipeFromJS}})
     res.json("edit successful")
   } catch(err){
     console.log(err)
 }
+}
 
-
+exports.editImage = async (req,res) => {
+  try{ 
+    const recipeObj = await Todo.findById({_id: req.params.id})
+    await Todo.updateOne({_id: req.params.id},{$set: {img: req.file.filename}})
+    const todoItems = await Todo.findById({_id: req.params.id})
+    res.render("edit.ejs", {recipeName: recipeObj.recipeName, recipeCatagory: recipeObj.catagory, recipe:recipeObj.recipe, todos: todoItems})
+  } catch(err){
+    console.log(err)
+}
 }
