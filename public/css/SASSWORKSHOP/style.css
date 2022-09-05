@@ -11,12 +11,17 @@ body {
   background-position: 80% -25%;
 }
 
-.index {
+.auth-prev {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 20em;
   height: 65vh;
+  color: #FF7A21;
+}
+
+.alert {
+  color: red;
 }
 
 .index__title {
@@ -29,49 +34,38 @@ body {
 .btn {
   padding: 1.5em;
   width: 8em;
-  margin-bottom: 1em;
-}
-
-.btn__style {
-  font-size: 18px;
+  margin: 1em 0;
+  border: none;
+  font-size: 1em;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.4em;
   font-weight: 500;
   border-radius: 0.25em;
   text-decoration: none;
-}
-
-.btn__color {
   color: #fff;
   background: #242124;
   transition: all 0.4s ease;
 }
-.btn__color:hover {
+.btn:hover {
   color: #242124;
   background: #FF7A21;
   transition: all 0.4s ease;
 }
 
-.form {
+.auth-form {
   width: 60em;
 }
 
-.form__input {
+.auth-form__input {
   padding: 1.5em;
   border-style: solid;
   border-width: 0;
   width: 18em;
   border-radius: 0.25em;
-}
-
-.form__input__style {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.3em;
-}
-
-.form__input__color {
   background: #fff;
 }
 
