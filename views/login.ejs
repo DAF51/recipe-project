@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/SASSWORKSHOP/style.css">
 </head>
 <body>
-    <section class="index">
+    <section class="auth-prev">
         <% if (locals.messages.errors) { %>
             <% messages.errors.forEach( el => { %>
                 <div class="alert alert-danger"><%= el.msg %></div>
@@ -19,10 +19,10 @@
                 <div class="alert alert-danger"><%= el.msg %></div>
             <% }) %>    
         <% } %>
-        <form class="form" action="/login" method="POST">
-            <input class="form__input form__input__style form__input__color" type="email" name="email" placeholder="Email">
-            <input class="form__input form__input__style form__input__color" type="password" name="password" placeholder="Password">
-            <input class="btn btn__style btn__color" type="submit">
+        <form class="auth-form" action="/login" method="POST">
+            <input class="auth-form__input" type="email" name="email" placeholder="Email">
+            <input class="auth-form__input" type="password" name="password" placeholder="Password">
+            <input  class="btn" type="submit">
         </form>
     </section>
 </body>
