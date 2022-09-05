@@ -1,5 +1,8 @@
 node_modules
+.vscode/*
 .env
 style.scss
 style.css.map
 mixins.scss
+.vscode/*
+.env

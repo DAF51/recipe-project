@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Todos</h1>
+    <h1>Your Recipes</h1>
     <ul>
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <span class="recipeName"><%= el.recipeName %></span>
+                <span class="catagory"><%=el.catagory %></span>
+                <p class="recipe"><%=el.recipe%></p>
+                <form action=<%=`/edit/${el._id}`%> method="GET"><button>Edit</button></form>
                 <span class='del'> Delete </span>
+                <div class="col-12 card-img">
+                    <img src="/uploads/images/<%= el.img %>" class="card-img" alt="...">
+                </div>
             </li>
     <% }) %>    
     </ul>
 
     <h2><%= user.userName %> has <%= left %> things left to do.</h2>
 
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
-    </form>
+    <form action="/create" method="GET"><button>Create recipe</button></form>
 
     <a href="/logout">Logout</a>
 
