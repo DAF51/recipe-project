@@ -11,12 +11,12 @@
     <section class="auth-prev">
         <% if (locals.messages.errors) { %>
             <% messages.errors.forEach( el => { %>
-                <div class="alert alert-danger"><%= el.msg %></div>
+                <p class="auth-prev__alert"><%= el.msg %></p>
             <% }) %>    
         <% } %>
         <% if (locals.messages.info) { %>
             <% messages.info.forEach( el => { %>
-                <div class="alert alert-danger"><%= el.msg %></div>
+                <p class="auth-prev__alert"><%= el.msg %></p>
             <% }) %>    
         <% } %>
         <form class="auth-form" action="/login" method="POST">
