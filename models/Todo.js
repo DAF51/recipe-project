@@ -1,18 +1,26 @@
 const mongoose = require('mongoose')
 
-const TodoSchema = new mongoose.Schema({
-  todo: {
+const RecipeSchema = new mongoose.Schema({
+  recipeName: {
     type: String,
     required: true,
   },
-  completed: {
-    type: Boolean,
+  catagory: {
+    type: String,
+    required: true,
+  },
+  recipe: {
+    type: String,
     required: true,
   },
   userId: {
     type: String,
     required: true
+  },
+  img: {
+    type: String,
+    default: 'placeholder.jpg',
   }
 })
 
-module.exports = mongoose.model('Todo', TodoSchema)
+module.exports = mongoose.model('Todo', RecipeSchema)
