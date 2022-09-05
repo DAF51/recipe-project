@@ -25,8 +25,10 @@ async function editRecipe(){
 
     const data = await response.json()
     console.log(data)
-    //this redirects you back to the todos page
-    window.location ="/todos"
+
+    //this redirects you to the upload image page
+    window.location = `/edit/uploadImage/${id}`
+    
 
   } catch(err){
     console.log(err)
