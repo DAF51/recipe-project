@@ -10,35 +10,34 @@
 
 <body>
   <h1>Edit your recipe</h1>
+
+  <ul>
+    <div class="col-12 card-img">
+      <img src="/uploads/images/<%= todos.img %>" class="card-img" alt="...">
+    </div>      
+  </ul>
+  
   <form action='/edit' method="POST">
 
     <!-- A form can't use a PUT request, so I'm going to need to send this to the main.JS
     file where I'll create a button object that will send the put request through in
     its place. -->
 
-    <span>Recipe Name: <input type="text" name="name" value=<%=`${recipeName}`%>></input></span>
+    <span>Recipe Name: <input type="text" name="name" id="recipeName" value=<%=`${recipeName}`%>></input></span>
     <span>Recipe Catagory: <select name="catagory">
       <option>Breakfast</option>
       <option>Lunch</option>
       <option>Dinner</option>
       <option>Desert</option>
     </select></span>
-    <span>Recipe: <textarea name="recipe"><%=recipe%></textarea></span>
-    <span class="ed" value=<%=`${todos._id}`%>>Finish Editing</span>
+
+    <span>Recipe: <textarea name="recipe" id="recipe"><%=recipe%></textarea></span>
+    <span class="ed" value=<%=`${todos._id}`%>>Next</span>
   </form>
   <br><br><br><br>
-  <ul>
-    <div class="col-12 card-img">
-      <img src="/uploads/images/<%= todos.img %>" class="card-img" alt="...">
-    </div>      
-  </ul>
-  <form action=<%=`/edit/editImage/${todos._id}`%> method="POST" enctype="multipart/form-data">
-    <label for="image">Edit image</label>
-    <input type="file" required name="image" id="inputImage">
-      &nbsp;&nbsp;&nbsp;
-    <button id="editedFile">Submit File</button>
-  </form>
+
   
+
   <!-- This script was not working because it needed the ../ to back it out of the folder it was in. 
   Without it, it was looking for the file in /edit/js/edit.js, instead of in /public/js. -->
   <script src="/js/edit.js"></script>

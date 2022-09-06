@@ -12,6 +12,17 @@ exports.getEdit = async (req, res) => {
   }
 }
 
+exports.getUploadImage = async (req, res) => {
+  try{
+  const recipeObj = await Todo.findById({_id: req.params.id})
+  await console.log(`The ID is ${req.params.id}`)
+  await console.log(`The name is ${recipeObj}`)
+  const todoItems = await Todo.findById({_id: req.params.id})
+  res.render("editImage.ejs", {recipeName: recipeObj.recipeName, recipeCatagory: recipeObj.catagory, recipe:recipeObj.recipe, todos: todoItems})
+  } catch(err){
+    console.log(err)
+  }
+}
 
 exports.editRecipe = async (req,res) => {
   try{ 
@@ -24,10 +35,14 @@ exports.editRecipe = async (req,res) => {
 
 exports.editImage = async (req,res) => {
   try{ 
-    const recipeObj = await Todo.findById({_id: req.params.id})
-    await Todo.updateOne({_id: req.params.id},{$set: {img: req.file.filename}})
-    const todoItems = await Todo.findById({_id: req.params.id})
-    res.render("edit.ejs", {recipeName: recipeObj.recipeName, recipeCatagory: recipeObj.catagory, recipe:recipeObj.recipe, todos: todoItems})
+    if(req.file){
+      const recipeObj = await Todo.findById({_id: req.params.id})
+      await Todo.updateOne({_id: req.params.id},{$set: {img: req.file.filename}})
+      const todoItems = await Todo.findById({_id: req.params.id})
+      res.redirect("/todos")
+    }else{
+      res.redirect("/todos")
+    }
   } catch(err){
     console.log(err)
 }
