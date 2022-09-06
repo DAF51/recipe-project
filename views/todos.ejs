@@ -9,17 +9,45 @@
 </head>
 <body>
     <h1>Your Recipes</h1>
-    <ul>
+    <% todos.forEach( el=> { %>
+    <section class='todoItem' data-id='<%=el._id%>'>
+        <img src="/uploads/images/<%= el.img %>" class="card-img" alt="...">
+        <h2 class="recipeName"><%= el.recipeName %></h2>
+        <p class="recipe"><%=el.recipe%></p>
+        <ul>
+            <li class="catagory">
+                <%=el.catagory %>
+            </li>
+        </ul>
+        <form action=<%=`/edit/${el._id}`%> method="GET">
+            <button class="btn" type="submit">Edit</button>
+        </form>
+        <button class='del'>Delete</button>
+    </section>
+    <br>
+    <% }) %>
+    <form action="/create" method="GET">
+        <button>Create recipe</button>
+    </form>
+    <a href="/logout">Logout</a>
+
+    <!-- <ul>
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
-                <span class="recipeName"><%= el.recipeName %></span>
-                <span class="catagory"><%=el.catagory %></span>
-                <p class="recipe"><%=el.recipe%></p>
-                <form action=<%=`/edit/${el._id}`%> method="GET"><button>Edit</button></form>
-                <span class='del'> Delete </span>
                 <div class="col-12 card-img">
                     <img src="/uploads/images/<%= el.img %>" class="card-img" alt="...">
                 </div>
+                <div class="recipeName">
+                    <%= el.recipeName %>
+                </div>
+                <div class="catagory">
+                    <%=el.catagory %>
+                </div>
+                <p class="recipe">
+                    <%=el.recipe%>
+                </p>
+                <form action=<%=`/edit/${el._id}`%> method="GET"><button>Edit</button></form>
+                <span class='del'> Delete </span>
             </li>
     <% }) %>    
     </ul>
@@ -28,7 +56,7 @@
 
     <form action="/create" method="GET"><button>Create recipe</button></form>
 
-    <a href="/logout">Logout</a>
+    <a href="/logout">Logout</a> -->
 
     <script src="js/main.js"></script>
 </body>
