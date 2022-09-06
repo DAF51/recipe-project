@@ -83,4 +83,18 @@ body {
   grid-template-columns: auto auto auto;
 }
 
+.recipe-prev__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 22em;
+  background-color: #fff;
+}
+
+.recipe-prev__img {
+  width: 100%;
+  border-radius: 1em;
+}
+
 /*# sourceMappingURL=style.css.map */
