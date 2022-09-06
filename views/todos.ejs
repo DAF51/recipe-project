@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="css/SASSWORKSHOP/style.css">
 </head>
 <body>
+    <header class="header-prev">
+        <div>
+            <img src="/uploads/images/cover.png " class="header-prev__logo" alt="...">
+        </div>
+        <a class="header-prev__style" href="/create">Create</a>
+        <a class="header-prev__style" href="/logout">Logout</a>
+    </header>
     <h1 class="recipe-prev__title">Your Recipes</h1>
     <section class='recipe-prev'>
         <% todos.forEach( el=> { %>
@@ -27,11 +34,6 @@
         </div>
         <% }) %>
     </section>
-    <form action="/create" method="GET">
-        <button>Create recipe</button>
-    </form>
-    <a href="/logout">Logout</a>
-
     <!-- <ul>
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
