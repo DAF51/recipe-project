@@ -5,21 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/SASSWORKSHOP/style.css">
 </head>
 <body>
-    <h1>Your Recipes</h1>
-    <ul>
+    <header class="header-prev">
+        <img src="/uploads/images/logo.png" class="header-prev__logo" alt="...">
+        <div>
+            <a class="header-prev__style" href="/create">Create</a>
+            <a class="header-prev__style" href="/logout">Logout</a>
+        </div>
+    </header>
+    <h1 class="recipe-prev__title">Your Recipes</h1>
+    <section class='recipe-prev'>
+        <% todos.forEach( el=> { %>
+        <div class='recipe-prev__item' data-id='<%=el._id%>'>
+            <img src="/uploads/images/<%= el.img %>" class="recipe-prev__img" alt="...">
+            <h2 class="recipe-prev__name"><%= el.recipeName %></h2>
+            <p class="recipe-prev__ingredient"><%=el.recipe%></p>
+            <ul>
+                <li class="recipe-prev__catagory">
+                    catagory: <%=el.catagory %>
+                </li>
+            </ul>
+            <form action=<%=`/edit/${el._id}`%> method="GET">
+                <button class="btn btn__color btn__style" type="submit">Edit</button>
+            </form>
+            <button class='del-btn  del-btn__style'>Delete</button>
+        </div>
+        <% }) %>
+    </section>
+    <!-- <ul>
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
-                <span class="recipeName"><%= el.recipeName %></span>
-                <span class="catagory"><%=el.catagory %></span>
-                <p class="recipe"><%=el.recipe%></p>
-                <form action=<%=`/edit/${el._id}`%> method="GET"><button>Edit</button></form>
-                <span class='del'> Delete </span>
                 <div class="col-12 card-img">
                     <img src="/uploads/images/<%= el.img %>" class="card-img" alt="...">
                 </div>
+                <div class="recipeName">
+                    <%= el.recipeName %>
+                </div>
+                <div class="catagory">
+                    <%=el.catagory %>
+                </div>
+                <p class="recipe">
+                    <%=el.recipe%>
+                </p>
+                <form action=<%=`/edit/${el._id}`%> method="GET"><button>Edit</button></form>
+                <span class='del'> Delete </span>
             </li>
     <% }) %>    
     </ul>
@@ -28,7 +59,7 @@
 
     <form action="/create" method="GET"><button>Create recipe</button></form>
 
-    <a href="/logout">Logout</a>
+    <a href="/logout">Logout</a> -->
 
     <script src="js/main.js"></script>
 </body>

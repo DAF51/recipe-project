@@ -5,22 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/SASSWORKSHOP/style.css">
 </head>
 <body>
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
-    <% if (locals.messages.info) { %>
-        <% messages.info.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
-    <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
-    </form>
+    <section class="auth-prev">
+        <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el => { %>
+                <p class="auth-prev__alert"><%= el.msg %></p>
+            <% }) %>    
+        <% } %>
+        <% if (locals.messages.info) { %>
+            <% messages.info.forEach( el => { %>
+                <p class="auth-prev__alert"><%= el.msg %></p>
+            <% }) %>    
+        <% } %>
+        <form class="auth-form" action="/login" method="POST">
+            <input class="auth-form__input" type="email" name="email" placeholder="Email">
+            <input class="auth-form__input" type="password" name="password" placeholder="Password">
+            <input  class="btn" type="submit">
+        </form>
+    </section>
 </body>
 </html>
