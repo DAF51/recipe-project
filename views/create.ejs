@@ -11,7 +11,7 @@
   <body>
     <h1>Create a new recipe</h1>
     <form action="/create/createRecipe" method="POST" enctype="multipart/form-data">
-      <span>Recipe Name:<input type="text" name="name" placeholder="Recipe Name"></input></span>
+      <span>Recipe Name:<input type="text" name="name" placeholder="Recipe Name" required></input></span>
       <span>Recipe Catagory:<select name="catagory">
           <option>Breakfast</option>
           <option>Lunch</option>
@@ -19,12 +19,12 @@
           <option>Desert</option>
         </select>
       </span>
-      <span>Recipe: <textarea name="recipe" placeholder="Enter your recipe"></textarea></span>
+      <span>Recipe: <textarea name="recipe" placeholder="Enter your recipe" required></textarea></span>
       <button>Submit new recipe</button>
       <br><br><br><br>
       <div>
         <label for="image">Upload image</label>
-        <input type="file" name="image" id="image">
+        <input type="file" name="image" id="image" required>
       </div>
     </form>
     
