@@ -111,4 +111,17 @@ body {
   font-size: 1.4em;
 }
 
+.btn__color {
+  background-color: #FF7A21;
+}
+
+.btn__style {
+  padding: 0.5em;
+  border-radius: 2em;
+}
+.btn__style:hover {
+  background-color: #242124;
+  color: #FF7A21;
+}
+
 /*# sourceMappingURL=style.css.map */
