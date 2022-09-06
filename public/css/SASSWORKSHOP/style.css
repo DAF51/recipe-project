@@ -103,4 +103,12 @@ body {
   line-height: 1.3em;
 }
 
+.recipe-prev__catagory {
+  color: #FF7A21;
+  list-style: disclosure-closed;
+}
+.recipe-prev__catagory::marker {
+  font-size: 1.4em;
+}
+
 /*# sourceMappingURL=style.css.map */
