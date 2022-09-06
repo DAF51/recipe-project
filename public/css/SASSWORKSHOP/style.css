@@ -74,7 +74,7 @@ body {
 
 .header-prev {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-content: center;
   align-items: center;
   width: 90%;
@@ -85,7 +85,8 @@ body {
 }
 
 .header-prev__logo {
-  width: 10%;
+  width: 15%;
+  border-radius: 1em;
 }
 
 .header-prev__style {
@@ -124,6 +125,7 @@ body {
 
 .recipe-prev__img {
   width: 100%;
+  height: 14em;
   border-radius: 1em;
 }
 
