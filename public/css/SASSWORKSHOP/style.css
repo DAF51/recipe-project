@@ -63,6 +63,9 @@ body {
 }
 
 .auth-form__input {
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.3em;
   margin-bottom: 0.5em;
   padding: 1.5em;
   border-style: solid;
