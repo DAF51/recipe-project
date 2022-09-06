@@ -8,24 +8,25 @@
     <link rel="stylesheet" href="css/SASSWORKSHOP/style.css">
 </head>
 <body>
-    <h1>Your Recipes</h1>
-    <% todos.forEach( el=> { %>
-    <section class='todoItem' data-id='<%=el._id%>'>
-        <img src="/uploads/images/<%= el.img %>" class="card-img" alt="...">
-        <h2 class="recipeName"><%= el.recipeName %></h2>
-        <p class="recipe"><%=el.recipe%></p>
-        <ul>
-            <li class="catagory">
-                <%=el.catagory %>
-            </li>
-        </ul>
-        <form action=<%=`/edit/${el._id}`%> method="GET">
-            <button class="btn" type="submit">Edit</button>
-        </form>
-        <button class='del'>Delete</button>
+    <h1 class="recipe-prev__title">Your Recipes</h1>
+    <section class='recipe-prev'>
+        <% todos.forEach( el=> { %>
+        <div class='recipe-prev__item' data-id='<%=el._id%>'>
+            <img src="/uploads/images/<%= el.img %>" class="recipe-prev__img" alt="...">
+            <h2 class="recipe-prev__name"><%= el.recipeName %></h2>
+            <p class="recipe-prev__ingredient"><%=el.recipe%></p>
+            <ul>
+                <li class="recipe-prev__catagory">
+                    catagory: <%=el.catagory %>
+                </li>
+            </ul>
+            <form action=<%=`/edit/${el._id}`%> method="GET">
+                <button class="btn" type="submit">Edit</button>
+            </form>
+            <button class='del'>Delete</button>
+        </div>
+        <% }) %>
     </section>
-    <br>
-    <% }) %>
     <form action="/create" method="GET">
         <button>Create recipe</button>
     </form>
