@@ -5,6 +5,9 @@ body {
   margin-right: auto;
   background-color: #fffff0;
   color: #242124;
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.3em;
 }
 
 .auth-prev {
@@ -60,9 +63,6 @@ body {
 }
 
 .auth-form__input {
-  font-size: 1.2em;
-  font-weight: 500;
-  line-height: 1.3em;
   margin-bottom: 0.5em;
   padding: 1.5em;
   border-style: solid;
@@ -88,13 +88,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 22em;
+  width: 20em;
   background-color: #fff;
 }
 
 .recipe-prev__img {
   width: 100%;
   border-radius: 1em;
+}
+
+.recipe-prev__name {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.3em;
 }
 
 /*# sourceMappingURL=style.css.map */
